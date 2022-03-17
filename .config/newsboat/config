@@ -1,0 +1,18 @@
+browser $BROWSER
+reload-threads 10
+text-width 80
+goto-next-feed no
+max-items 15
+
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+unbind-key g
+unbind-key G
+
+bind-key j down
+bind-key k up
+bind-key h quit
+bind-key g home
+bind-key G end
