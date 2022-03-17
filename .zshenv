@@ -1,9 +1,9 @@
 # env variables are set here
 
 # default programs
+export BROWSER="brave"
 export EDITOR="nvim"
 export TERMINAL="alacritty"
-export BROWSER="brave"
 
 # ~/ cleanup
 export XDG_CACHE_HOME="$HOME/.cache"
