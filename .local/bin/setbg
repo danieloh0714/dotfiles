@@ -1,0 +1,4 @@
+#!/bin/sh
+
+wal -nqi ~/.config/wallpapers
+feh --bg-fill --no-fehbg "$(< "${HOME}/.cache/wal/wal")"

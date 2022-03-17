@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# start picom in background
+picom -b --config ~/.config/picom/picom.conf
