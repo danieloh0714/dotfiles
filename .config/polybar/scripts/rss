@@ -1,0 +1,4 @@
+#!/bin/sh
+
+newsboat -x reload
+echo $(newsboat -x print-unread | awk '{ print $1 }')
