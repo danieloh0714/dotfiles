@@ -1,4 +1,5 @@
 #!/bin/sh
 
+# seperate into two commands in order to use --no-fehbg flag
 wal -nqi ~/.config/wallpapers
 feh --bg-fill --no-fehbg "$(< "${HOME}/.cache/wal/wal")"
