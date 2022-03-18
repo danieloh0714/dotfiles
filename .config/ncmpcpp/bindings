@@ -1,3 +1,5 @@
+def_key "p"
+  add_item_to_playlist
 def_key "space"
   pause
 
