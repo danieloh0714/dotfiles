@@ -1,0 +1,13 @@
+ncmpcpp_directory = "~/.config/ncmpcpp"
+lyrics_directory = "~/.local/share/lyrics"
+mpd_music_dir = "~/docs/music"
+
+# for audio visualization
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = "yes"
+visualizer_type = "ellipse"
+visualizer_look = "+|"
+
+browser_display_mode = columns
+startup_screen = browser
