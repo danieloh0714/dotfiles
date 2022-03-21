@@ -34,6 +34,9 @@ def_key "n"
 def_key "N"
   previous_found_item
 
+def_key "f"
+  seek_forward
+
 def_key "J"
   move_sort_order_down
 def_key "K"
