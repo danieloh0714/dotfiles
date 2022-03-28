@@ -1,11 +1,13 @@
 #!/bin/sh
 
-# adjust screen resolution
-xrandr --output eDP-1 --mode 1920x1080
-# adjust screen brightness
+# set displays
+set-displays
+
+# set screen brightness
 xrandr --output eDP-1 --brightness 0.8
-# set monitors and setbg
-set-monitors &
 
 # faster key delay and rate
 xset r rate 210 40
+
+# start compositor
+picom -b --config "$XDG_CONFIG_HOME/picom/picom.conf"
