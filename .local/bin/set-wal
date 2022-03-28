@@ -10,7 +10,7 @@ set_wal() {
 
 pick_wal() {
   OPTION=$(ls "$WALLPAPERS_PATH" | rofi -dmenu) || exit
-  [ -f "$WALLPAPERS_PATH/$OPTION" ] && setwal $OPTION
+  [ -f "$WALLPAPERS_PATH/$OPTION" ] && set_wal $OPTION
 }
 
 case $1 in
