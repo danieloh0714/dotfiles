@@ -36,7 +36,6 @@ alias rm="rm -i"
 # docs
 alias site="cd ~/docs/projects/website"
 alias theo="cd ~/docs/theology"
-alias tui="cd ~/docs/projects/bubbletea/reformed-tui"
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
