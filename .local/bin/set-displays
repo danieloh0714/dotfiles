@@ -1,13 +1,11 @@
 #!/bin/sh
 
-DISPLAYS=$(xrandr -q | awk '/ connected/ {print $1}' | wc -l)
-if [ $DISPLAYS = 1 ]; then
-  xrandr --output eDP-1 --mode 1920x1080
-elif [ $DISPLAYS = 2 ]; then
-  xrandr --output eDP-1 --mode 1920x1080 --output DP-1 --auto --left-of eDP-1
-elif [ $DISPLAYS = 3 ]; then
-  xrandr --output eDP-1 --mode 1920x1080 --output DP-1 --auto --left-of eDP-1 --output DP-3 --mode 1920x1080 --right-of eDP-1
-fi
+NUM_DISPLAYS=$(xrandr -q | awk '/ connected/ {print $1}' | wc -l)
+case $NUM_DISPLAYS in
+  1) xrandr --output eDP-1 --mode 1920x1080;;
+  2) xrandr --output eDP-1 --mode 1920x1080 --output DP-1 --auto --left-of eDP-1;;
+  3) xrandr --output eDP-1 --mode 1920x1080 --output DP-1 --auto --left-of eDP-1 --output DP-3 --mode 1920x1080 --right-of eDP-1;;
+esac
 
 # set random wallpaper
 set-wal -r
