@@ -1,9 +1,8 @@
 #!/bin/sh
 
-OPTION=$(printf "screen\\nselect" | rofi -dmenu -i -p "What type of screenshot?")
-
-if [ $OPTION == "screen" ]; then
-  flameshot screen -n 1
-elif [ $OPTION == "select" ]; then
-  flameshot gui
-fi
+OPTION=$(printf "full\\nscreen\\nselect" | rofi -dmenu -i -p "Select screenshot style")
+case "$OPTION" in
+  full) flameshot full;;
+  screen) flameshot screen -n 1;;
+  select) flameshot gui;;
+esac
