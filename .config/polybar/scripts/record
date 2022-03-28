@@ -1,0 +1,68 @@
+#!/bin/sh
+
+updateicon() {
+  polybar-msg action record hook $1
+}
+
+killrecording() {
+  RECPID="$(cat /tmp/recordingpid)"
+  # kill with SIGTERM, allowing finishing touches.
+  kill -15 "$RECPID"
+  rm -f /tmp/recordingpid
+  updateicon 0
+  # even after SIGTERM, ffmpeg may still run, so SIGKILL it.
+  sleep 3
+  kill -9 "$RECPID"
+}
+
+audio() { \
+  ffmpeg \
+  -f pulse -i default \
+  -c:a flac \
+  "$HOME/audio-$(date '+%y%m%d-%H%M-%S').flac" &
+  echo $! > /tmp/recordingpid
+  updateicon 1
+}
+
+screencast() { \
+  ffmpeg \
+  -f x11grab \
+  -framerate 60 \
+  -video_size 1920x1080 \
+  -i :0.0+1680,0 \
+  -f pulse -i default \
+  -r 30 \
+  -c:v h264 -crf 0 -preset ultrafast -c:a aac \
+  "$HOME/screencast-$(date '+%y%m%d-%H%M-%S').mp4" &
+  echo $! > /tmp/recordingpid
+  updateicon 2
+}
+
+video() { \
+  ffmpeg \
+  -f x11grab \
+  -framerate 60 \
+  -video_size 1920x1080 \
+  -i :0.0+1680,0 \
+  -c:v libx264 -qp 0 -r 30 \
+  "$HOME/video-$(date '+%y%m%d-%H%M-%S').mkv" &
+  echo $! > /tmp/recordingpid
+  updateicon 3
+}
+
+askrecording() {
+  OPTION=$(printf "audio\\nscreencast\\nvideo" | rofi -dmenu -i -p "Select recording style")
+  case "$OPTION" in
+    audio) audio;;
+    screencast) screencast;;
+    video) video;;
+  esac
+}
+
+asktoend() {
+  OPTION=$(printf "no\\nyes" | rofi -dmenu -i -p "Stop recording?")
+  [ "$OPTION" = "yes" ] && killrecording
+  exit
+}
+
+[ -f /tmp/recordingpid ] && asktoend || askrecording
