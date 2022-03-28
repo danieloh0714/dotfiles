@@ -5,3 +5,4 @@
 - WM: [i3-gaps](https://github.com/danieloh0316/dotfiles/blob/main/.config/i3/config)
 - Terminal: [Alacritty](https://github.com/danieloh0316/dotfiles/blob/main/.config/alacritty/alacritty.yml)
 - Editor: [Neovim](https://github.com/danieloh0316/nvim)
+- Status bar: [Polybar](https://github.com/danieloh0316/dotfiles/tree/main/.config/polybar)
