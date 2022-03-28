@@ -38,11 +38,6 @@ alias site="cd ~/docs/projects/website"
 alias theo="cd ~/docs/theology"
 alias tui="cd ~/docs/projects/bubbletea/reformed-tui"
 
-# recording
-alias record="ffmpeg -f pulse -i default out.mp3"
-alias screencast="ffmpeg -f x11grab -i :0.0 out.mp4"
-alias screencast_audio="ffmpeg -f x11grab -i :0.0 -f pulse -i default out.mp4"
-
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
