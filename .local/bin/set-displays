@@ -9,5 +9,5 @@ elif [ $DISPLAYS = 3 ]; then
   xrandr --output eDP-1 --mode 1920x1080 --output DP-1 --auto --left-of eDP-1 --output DP-3 --mode 1920x1080 --right-of eDP-1
 fi
 
-# set wallpaper
-set-wal
+# set random wallpaper
+set-wal -r

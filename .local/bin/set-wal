@@ -1,5 +1,20 @@
 #!/bin/sh
 
-# seperate into two commands in order to use --no-fehbg flag
-wal -nqi ~/.config/wallpapers
-feh --bg-fill --no-fehbg "$(< "${HOME}/.cache/wal/wal")"
+WALLPAPERS_PATH="$XDG_CONFIG_HOME/wallpapers"
+
+setwal() {
+  # seperate into two commands in order to use --no-fehbg flag
+  wal -nqi "$WALLPAPERS_PATH/$1"
+  feh --bg-fill --no-fehbg "$(< "${HOME}/.cache/wal/wal")"
+}
+
+pickwal() {
+  OPTION=$(ls "$WALLPAPERS_PATH" | rofi -dmenu)
+  [ -z $OPTION ] && exit
+  [ -f "$WALLPAPERS_PATH/$OPTION" ] && setwal $OPTION
+}
+
+case $1 in
+  -r) setwal;;
+  *) pickwal;;
+esac
