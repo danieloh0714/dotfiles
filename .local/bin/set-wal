@@ -8,12 +8,12 @@ set_wal() {
   feh --bg-fill --no-fehbg "$(< "${HOME}/.cache/wal/wal")"
 }
 
-pick_wal() {
-  OPTION=$(ls "$WALLPAPERS_PATH" | rofi -dmenu) || exit
+select_wal() {
+  OPTION=$(ls "$WALLPAPERS_PATH" | rofi -dmenu -i -p "Select wallpaper") || exit
   [ -f "$WALLPAPERS_PATH/$OPTION" ] && set_wal $OPTION
 }
 
 case $1 in
   -r) set_wal;;
-  *) pick_wal;;
+  *) select_wal;;
 esac
