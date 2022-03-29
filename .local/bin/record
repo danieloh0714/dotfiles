@@ -1,6 +1,6 @@
 #!/bin/sh
 
-update_icon() {
+update_polybar_icon() {
   polybar-msg action record hook $1
 }
 
@@ -10,7 +10,7 @@ audio() { \
   -c:a flac \
   "$HOME/audio-$(date '+%y%m%d-%H%M-%S').flac" &
   echo $! > /tmp/recordingpid
-  update_icon 1
+  update_polybar_icon 1
 }
 
 screencast() { \
@@ -24,7 +24,7 @@ screencast() { \
   -c:v h264 -crf 0 -preset ultrafast -c:a aac \
   "$HOME/screencast-$(date '+%y%m%d-%H%M-%S').mp4" &
   echo $! > /tmp/recordingpid
-  update_icon 2
+  update_polybar_icon 2
 }
 
 video() { \
@@ -36,15 +36,16 @@ video() { \
   -c:v libx264 -qp 0 -r 60 \
   "$HOME/video-$(date '+%y%m%d-%H%M-%S').mkv" &
   echo $! > /tmp/recordingpid
-  update_icon 3
+  update_polybar_icon 3
 }
 
 kill_recording() {
+  [ -f /tmp/recordingpid ] || exit 0
   RECPID="$(cat /tmp/recordingpid)"
   # kill with SIGTERM, allowing finishing touches.
   kill -15 "$RECPID"
   rm -f /tmp/recordingpid
-  update_icon 0
+  update_polybar_icon 0
   # even after SIGTERM, ffmpeg may still run, so SIGKILL it.
   sleep 3
   kill -9 "$RECPID"
@@ -53,7 +54,7 @@ kill_recording() {
 stop_recording() {
   OPTION=$(printf "no\\nyes" | rofi -dmenu -i -p "Stop recording?")
   [ "$OPTION" = "yes" ] && kill_recording
-  exit
+  exit 0
 }
 
 start_recording() {
@@ -65,4 +66,10 @@ start_recording() {
   esac
 }
 
-[ -f /tmp/recordingpid ] && stop_recording || start_recording
+case "$1" in
+  audio) audio;;
+  screencast) screencast;;
+  video) video;;
+  kill) kill_recording;;
+  *) [ -f /tmp/recordingpid ] && stop_recording || start_recording;;
+esac
