@@ -15,5 +15,5 @@ select_wal() {
 
 case $1 in
   -r) set_wal;;
-  *) select_wal;;
+  "") select_wal;;
 esac
