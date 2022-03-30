@@ -12,29 +12,24 @@ fi
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# nvim
-alias v="nvim"
-
+###############
+### ALIASES ###
+###############
 # for tracking dotfiles
 alias config="git --git-dir=$HOME/docs/projects/dotfiles --work-tree=$HOME"
-
-# git
-alias gaa="git add .; git status"
-
-# colorize
-alias l="ls -alh --color"
-alias la="ls -ah --color"
-alias ll="ls -lh --color"
-alias ls="ls --color"
-alias grep="grep --color"
 
 # confirm before overwriting something
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 
-# docs
-alias site="cd ~/docs/projects/website"
+alias gaa="git add .; git status"
+alias grep="grep --color"
+alias l="ls -alh --color"
+alias la="ls -ah --color"
+alias ll="ls -lh --color"
+alias ls="ls --color"
+alias v="nvim"
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
