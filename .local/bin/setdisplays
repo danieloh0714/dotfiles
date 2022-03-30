@@ -8,4 +8,4 @@ case $NUM_DISPLAYS in
 esac
 
 # set random wallpaper
-set-wal -r
+setwal -r
