@@ -31,8 +31,8 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start browsers
-bindsym $mod+w exec brave
-bindsym $mod+Shift+w exec firefox
+bindsym $mod+w exec $BROWSER
+bindsym $mod+Shift+w exec $BROWSER --incognito
 
 # kill focused window
 bindsym $mod+q kill
