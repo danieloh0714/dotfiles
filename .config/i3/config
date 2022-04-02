@@ -44,7 +44,7 @@ bindsym $mod+d exec "rofi -modi drun,run -show drun"
 for_window [class=".*"] border pixel 0
 
 # gaps
-gaps inner 20
+gaps inner 40
 
 # change focus
 bindsym $mod+h focus left
