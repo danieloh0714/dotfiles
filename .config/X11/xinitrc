@@ -1,7 +1,16 @@
 #!/bin/sh
 
-# source xprofile
-[ -f "$XDG_CONFIG_HOME/X11/xprofile" ] && . "$XDG_CONFIG_HOME/X11/xprofile"
+# set displays
+setdisplays
+
+# faster key delay and rate
+xset r rate 210 40
+
+# start compositor
+picom -b
+
+# start flameshot
+flameshot &
 
 # start i3
 exec i3
