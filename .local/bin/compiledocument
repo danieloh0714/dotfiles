@@ -1,12 +1,11 @@
 #!/bin/sh
 
-file=$(readlink -f "$1")
-dir=${file%/*}
-base=${file%.*}
-ext=${file##*.}
+FILE=$(readlink -f "$1")
+DIR=${FILE%/*}
+EXT=${FILE##*.}
 
-cd $dir || exit 1
+cd $DIR || exit 1
 
-case $ext in
-  tex) pdflatex $file ;;
+case $EXT in
+  tex) pdflatex $FILE ;;
 esac
