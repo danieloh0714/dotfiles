@@ -1,0 +1,30 @@
+[global]
+    monitor = 0
+    follow = keyboard
+    width = 300
+    height = 300
+    offset = 10x50
+    transparency = 0
+    padding = 8
+    horizontal_padding = 8
+    text_icon_padding = 8
+    font = Monospace 12
+    format = "<b>%s</b>\n%b"
+    alignment = center
+    min_icon_size = 32
+
+[urgency_low]
+    background = "#222222"
+    foreground = "#888888"
+    timeout = 5
+
+[urgency_normal]
+    background = "#285577"
+    foreground = "#ffffff"
+    timeout = 10
+
+[urgency_critical]
+    background = "#900000"
+    foreground = "#ffffff"
+    frame_color = "#ff0000"
+    timeout = 0

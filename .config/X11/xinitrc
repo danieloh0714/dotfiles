@@ -9,7 +9,10 @@ xset r rate 210 40
 # start compositor
 picom -b
 
-# start flameshot
+# start notification daemon
+dunst &
+
+# start screenshot program
 flameshot &
 
 # start window manager
