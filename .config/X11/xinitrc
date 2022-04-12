@@ -12,5 +12,5 @@ picom -b
 # start flameshot
 flameshot &
 
-# start i3
-exec i3
+# start window manager
+exec bspwm
