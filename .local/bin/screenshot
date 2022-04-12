@@ -1,8 +1,9 @@
 #!/bin/sh
 
 OPTION=$(printf "full\\nscreen\\nselect" | rofi -dmenu -i -p "Select screenshot style")
+NOTIFICATION_ICON="/usr/share/icons/Adwaita/16x16/legacy/applets-screenshooter-symbolic.symbolic.png"
 case "$OPTION" in
-  full) flameshot full;;
-  screen) flameshot screen -n 1;;
+  full) flameshot full && notify-send -u low "screenshot taken" "all displays" -i "$NOTIFICATION_ICON";;
+  screen) flameshot screen -n 1 && notify-send -u low "screenshot taken" "current display" -i "$NOTIFICATION_ICON";;
   select) flameshot gui;;
 esac

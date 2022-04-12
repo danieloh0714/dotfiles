@@ -4,8 +4,8 @@ FILE=$(readlink -f "$1")
 DIR=${FILE%/*}
 EXT=${FILE##*.}
 
-cd $DIR || exit 1
+cd "$DIR" || exit 1
 
-case $EXT in
-  tex) pdflatex $FILE ;;
+case "$EXT" in
+  tex) pdflatex "$FILE" ;;
 esac
