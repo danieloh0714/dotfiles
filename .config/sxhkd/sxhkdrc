@@ -20,6 +20,14 @@ super + w
 super + shift + w
 	firefox
 
+# volume control
+XF86AudioRaiseVolume
+  pactl set-sink-volume 0 +5%
+XF86AudioLowerVolume
+  pactl set-sink-volume 0 -5%
+XF86AudioMute
+  pactl set-sink-mute 0 toggle
+
 # screenshot
 Print
 	screenshot
