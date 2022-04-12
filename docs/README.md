@@ -3,6 +3,8 @@
 - OS: Arch Linux
 - Shell: [Zsh](https://github.com/danieloh0316/dotfiles/tree/main/.config/zsh)
 - WM: [bspwm](https://github.com/danieloh0316/dotfiles/blob/main/.config/bspwm/bspwmrc)
+- Hotkeys: [sxhkd](https://github.com/danieloh0316/dotfiles/blob/main/.config/sxhkd/sxhkdrc)
+- Notifications: [dunst](https://github.com/danieloh0316/dotfiles/blob/main/.config/dunst/dunstrc)
 - Compositor: [picom](https://github.com/danieloh0316/dotfiles/blob/main/.config/picom/picom.conf)
 - Terminal: [Alacritty](https://github.com/danieloh0316/dotfiles/blob/main/.config/alacritty/alacritty.yml)
 - Editor: [Neovim](https://github.com/danieloh0316/nvim)
