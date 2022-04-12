@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# for tracking dotfiles
+alias config="git --git-dir=$HOME/docs/projects/dotfiles --work-tree=$HOME"
+
+# git
+alias gaa="git add .; git status"
+
+# color
+alias grep="grep --color"
+alias l="ls -alh --color"
+alias la="ls -ah --color"
+alias ll="ls -lh --color"
+alias ls="ls --color"
+
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+
+# programs
+alias v="nvim"
