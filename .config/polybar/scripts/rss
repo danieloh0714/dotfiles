@@ -1,4 +1,6 @@
 #!/bin/sh
 
 newsboat -x reload
-echo $(newsboat -x print-unread | awk '{ print $1 }')
+UNREAD=$(newsboat -x print-unread | awk '{ print $1 }')
+[ "$UNREAD" != 0 ] && notify-send "RSS update" "$UNREAD unread" -i "$(readlink -f "$0").svg"
+echo "$UNREAD"
