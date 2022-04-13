@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sxiv "$XDG_DATA_HOME/wallpapers"
+sxiv -t "$XDG_DATA_HOME/wallpapers"
