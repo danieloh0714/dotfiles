@@ -2,18 +2,6 @@
 
 WALLPAPERS_DIR="$XDG_DATA_HOME/wallpapers"
 
-set_wal() {
-  # seperate into two commands in order to use --no-fehbg flag
-  wal -nqi "$WALLPAPERS_DIR/$1"
-  feh --bg-fill --no-fehbg "$(< "${HOME}/.cache/wal/wal")"
-}
-
-select_wal() {
-  OPTION=$(ls "$WALLPAPERS_DIR" | rofi -dmenu -i -p "Select wallpaper") || exit
-  [ -f "$WALLPAPERS_DIR/$OPTION" ] && set_wal $OPTION
-}
-
-case $1 in
-  -r) set_wal;;
-  "") select_wal;;
-esac
+# seperate into two commands in order to use --no-fehbg flag
+wal -nqi "$WALLPAPERS_DIR/$1"
+feh --bg-fill --no-fehbg "$(< "${HOME}/.cache/wal/wal")"
