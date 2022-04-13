@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# this script is necessary in order to load the correct colors
+
+(cat ~/.cache/wal/sequences &)
+ncmpcpp
