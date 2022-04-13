@@ -1,0 +1,9 @@
+#!/bin/sh
+
+while read file
+do
+  case "$1" in
+    "g") tr '\n' '\0' | xargs -0 gimp &;;
+    "w") setwal $(basename "$file");;
+  esac
+done
