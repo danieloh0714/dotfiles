@@ -1,12 +1,14 @@
 #!/bin/sh
 
 # for tracking dotfiles
-alias config="git --git-dir=$HOME/docs/projects/dotfiles --work-tree=$HOME"
+alias d="git --git-dir=$HOME/docs/projects/dotfiles --work-tree=$HOME"
 
 # git
 alias gaa="git add .; git status"
+alias gs="git status"
 
 # color
+alias diff="diff --color"
 alias grep="grep --color"
 alias l="ls -alh --color"
 alias la="ls -ah --color"
@@ -14,9 +16,9 @@ alias ll="ls -lh --color"
 alias ls="ls --color"
 
 # confirm before overwriting something
-alias cp="cp -i"
-alias mv="mv -i"
-alias rm="rm -i"
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -iv"
 
 # programs
 alias v="nvim"
