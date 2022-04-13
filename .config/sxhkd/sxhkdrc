@@ -12,7 +12,10 @@ super + Return
 
 # program launcher
 super + d
-  rofi -modi drun,run -show drun
+  rofi -show drun
+# script launcher
+super + shift + d
+  rofi -show run
 
 # browsers
 super + w
