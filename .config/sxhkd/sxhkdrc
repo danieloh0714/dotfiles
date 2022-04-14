@@ -65,6 +65,10 @@ super + q
 super + m
   bspc desktop -l next
 
+# send current node to the newest preselected node
+super + y
+  bspc node -n newest.!automatic.local
+
 # swap the current node and the biggest window
 super + g
   bspc node -s biggest.window
@@ -76,6 +80,10 @@ super + g
 # set the window state
 super + {t,shift + t,s,f}
   bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+  bspc node -g {marked,locked,sticky,private}
 
 #
 # focus/swap
@@ -103,15 +111,15 @@ super + {_,shift + }{1-9,0}
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
-        bspc node -p {west,south,north,east}
+  bspc node -p {west,south,north,east}
 
 # cancel the preselection for the focused node
 super + ctrl + space
-        bspc node -p cancel
+  bspc node -p cancel
 
 # cancel the preselection for the focused desktop
 super + ctrl + shift + space
-        bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+  bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize
