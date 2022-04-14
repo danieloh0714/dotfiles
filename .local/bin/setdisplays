@@ -2,8 +2,8 @@
 
 NUM_DISPLAYS=$(xrandr -q | awk '/ connected/ {print $1}' | wc -l)
 case $NUM_DISPLAYS in
-  1) xrandr --output eDP-1 --primary --mode 1920x1080 --brightness 0.8 --output DP-3 --off;;
-  2) xrandr --output eDP-1 --primary --mode 1920x1080 --brightness 0.8 --output DP-3 --auto --left-of eDP-1;;
+  1) xrandr --output eDP-1 --primary --mode 1920x1080 --brightness 0.7 --output DP-3 --off;;
+  2) xrandr --output eDP-1 --mode 1920x1080 --brightness 0.7 --output DP-3 --primary --auto --left-of eDP-1;;
 esac
 
 # set random wallpaper
