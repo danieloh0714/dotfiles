@@ -25,19 +25,27 @@ super + shift + w
 
 # music
 super + n
-  $TERMINAL -e openncmpcpp
+  $TERMINAL -e ncmpcpp
 
 # RSS
 super + r
-  $TERMINAL -e opennewsboat
+  $TERMINAL -e newsboat
 
-# volume control
+# audio control
 XF86AudioRaiseVolume
   pactl set-sink-volume 0 +5%
 XF86AudioLowerVolume
   pactl set-sink-volume 0 -5%
 XF86AudioMute
   pactl set-sink-mute 0 toggle
+XF86AudioPlay
+  mpc toggle
+XF86AudioStop
+  mpc stop
+XF86AudioPrev
+  mpc prev
+XF86AudioNext
+  mpc next
 
 # screenshot
 Print
