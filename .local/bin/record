@@ -1,7 +1,7 @@
 #!/bin/sh
 
 update_polybar_icon() {
-  polybar-msg action record hook $1
+  polybar-msg action record hook "$1"
 }
 
 audio() { \
@@ -52,13 +52,13 @@ kill_recording() {
 }
 
 stop_recording() {
-  OPTION=$(printf "no\\nyes" | dmenu -i -p "Stop recording?")
+  OPTION=$(printf "no\nyes" | dmenu -i -p "Stop recording?")
   [ "$OPTION" = "yes" ] && kill_recording
   exit 0
 }
 
 start_recording() {
-  OPTION=$(printf "audio\\nscreencast\\nvideo" | dmenu -i -p "Select recording style")
+  OPTION=$(printf "audio\nscreencast\nvideo" | dmenu -i -p "Select recording style")
   case "$OPTION" in
     audio) audio;;
     screencast) screencast;;
