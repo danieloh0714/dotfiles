@@ -11,7 +11,7 @@
     horizontal_padding = 8
     text_icon_padding = 8
     frame_width = 1
-    font = Monospace 9
+    font = Monospace 11
     format = "<b>%s</b>\n%b"
     alignment = center
     min_icon_size = 50
