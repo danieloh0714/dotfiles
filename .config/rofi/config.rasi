@@ -2,4 +2,4 @@ configuration {
     modi: "drun,run";
 }
 
-@import "~/.cache/wal/colors-rofi-dark"
+@import "~/.cache/wal/colors-rofi-light"
