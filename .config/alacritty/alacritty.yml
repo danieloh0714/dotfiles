@@ -15,3 +15,6 @@ font:
     family: JetBrainsMono Nerd Font
     style: Italic
   size: 13.0
+
+import:
+  - ~/.cache/wal/colors-alacritty.yml
