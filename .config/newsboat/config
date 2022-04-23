@@ -2,7 +2,7 @@ browser $BROWSER
 reload-threads 10
 text-width 80
 goto-next-feed no
-max-items 15
+max-items 25
 
 unbind-key j
 unbind-key k
@@ -16,3 +16,10 @@ bind-key k up
 bind-key h quit
 bind-key g home
 bind-key G end
+
+color listnormal cyan default
+color listfocus black yellow standout bold
+color listnormal_unread blue default
+color listfocus_unread yellow default bold
+color info red black bold
+color article white default bold
