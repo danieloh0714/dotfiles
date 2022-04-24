@@ -8,7 +8,7 @@ feh --bg-fill --no-fehbg "$(< "$WAL_DIR/wal")"
 
 # load colors
 COLORS="$WAL_DIR/colors.sh"
-[ ! -f "$COLORS" ] && exit
+[ -f "$COLORS" ] || exit
 . "$COLORS"
 
 # set bspwm colors
