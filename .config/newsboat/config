@@ -2,7 +2,7 @@ browser $BROWSER
 reload-threads 10
 text-width 80
 goto-next-feed no
-max-items 25
+max-items 50
 
 unbind-key j
 unbind-key k
