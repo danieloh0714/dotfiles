@@ -17,12 +17,12 @@ screencast() { \
   ffmpeg \
   -f x11grab \
   -framerate 60 \
-  -s 1920x1080 \
-  -i :0.0+1680,0 \
-  -f alsa -i default \
+  -s "$(xdpyinfo | awk '/dimensions/ {print $2}')" \
+  -i "$DISPLAY" \
+  -f pulse -i default \
   -r 30 \
   -c:v h264 -crf 0 -preset ultrafast -c:a aac \
-  "$HOME/screencast-$(date '+%y%m%d-%H%M-%S').mp4" &
+  "$HOME/screencast-$(date '+%y%m%d-%H%M-%S').mkv" &
   echo $! > /tmp/recordingpid
   update_polybar_icon 2
 }
@@ -30,9 +30,8 @@ screencast() { \
 video() { \
   ffmpeg \
   -f x11grab \
-  -framerate 60 \
-  -s 1920x1080 \
-  -i :0.0+1680,0 \
+  -s "$(xdpyinfo | awk '/dimensions/ {print $2}')" \
+  -i "$DISPLAY" \
   -c:v libx264 -qp 0 -r 60 \
   "$HOME/video-$(date '+%y%m%d-%H%M-%S').mkv" &
   echo $! > /tmp/recordingpid
