@@ -18,8 +18,8 @@ bind-key g home
 bind-key G end
 
 color listnormal cyan default
-color listfocus black yellow standout bold
 color listnormal_unread blue default
+color listfocus black yellow standout bold
 color listfocus_unread yellow default bold
 color info red black bold
 color article white default bold
