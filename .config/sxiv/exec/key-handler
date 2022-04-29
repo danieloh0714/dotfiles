@@ -4,7 +4,7 @@ while read file
 do
   case "$1" in
     "c") xclip -selection clipboard "$file" -t image/png;;
-    "g") tr '\n' '\0' | xargs -0 gimp &;;
+    "g") setsid -f gimp "$file";;
     "w") setwal $(basename "$file");;
   esac
 done
