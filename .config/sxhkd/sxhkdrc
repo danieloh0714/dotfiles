@@ -13,11 +13,12 @@ super + Return
 # program launcher
 super + d
   rofi -show drun
+
 # script launcher
 super + shift + d
   rofi -show run
 
-# browsers
+# browser
 super + w
   $BROWSER
 super + shift + w
@@ -50,12 +51,6 @@ XF86AudioNext
 # screenshot
 Print
   screenshot
-
-# record
-super + Print
-  record
-super + End
-  record kill
 
 #
 # bspwm hotkeys
