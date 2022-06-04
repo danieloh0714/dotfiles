@@ -10,9 +10,9 @@ alias gs="git status"
 # color
 alias diff="diff --color"
 alias grep="grep --color"
-alias l="ls -alh --color"
+alias l="ls -ahl --color"
 alias la="ls -ah --color"
-alias ll="ls -lh --color"
+alias ll="ls -hl --color"
 alias ls="ls --color"
 
 # confirm before overwriting something
