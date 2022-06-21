@@ -1,5 +1,5 @@
 # dotfiles
-![screenshot](https://user-images.githubusercontent.com/57500135/165662853-49556313-b303-4aa0-97a7-c20a6ab8f8fe.png)
+![screenshot](https://user-images.githubusercontent.com/57500135/174724246-706d9fa3-2222-4c94-8f4c-7b0e174eb6f6.png)
 - OS: Arch Linux
 - Shell: [Zsh](https://github.com/danieloh0316/dotfiles/tree/main/.config/zsh)
 - WM: [bspwm](https://github.com/danieloh0316/dotfiles/blob/main/.config/bspwm/bspwmrc)
