@@ -32,6 +32,10 @@ super + m
 super + r
   $TERMINAL -e newsboat
 
+# Signal
+super + c
+  signal-desktop
+
 # audio control
 XF86AudioRaiseVolume
   pactl set-sink-volume 0 +5%
