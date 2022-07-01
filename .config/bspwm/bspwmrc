@@ -4,7 +4,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 NUM_DISPLAYS=$(xrandr -q | awk '/ connected/ {print $1}' | wc -l)
 if [ "$NUM_DISPLAYS" == 1 ]; then
-  bspc monitor eDP-1 -d 1 2 3
+  bspc monitor eDP-1 -d 1 2 3 4
   bspc monitor DP-3 -r
 elif [ "$NUM_DISPLAYS" == 2 ]; then
   bspc monitor eDP-1 -d 3 4
@@ -24,4 +24,4 @@ bspc config pointer_follows_monitor true
 bspc rule -a Sxiv state=floating
 bspc rule -a Zathura state=tiled
 
-$HOME/.config/polybar/launch
+"$HOME/.config/polybar/launch"
