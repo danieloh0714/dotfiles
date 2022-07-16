@@ -7,7 +7,7 @@ setdisplays
 xset r rate 210 40
 
 # start compositor
-picom -b
+picom --experimental-backends -b
 
 # start notification daemon
 dunst &
