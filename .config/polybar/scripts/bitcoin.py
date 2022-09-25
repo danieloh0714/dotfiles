@@ -1,6 +1,5 @@
 from requests import get
 from requests.exceptions import ConnectionError
-from subprocess import run
 
 API_VERSION = 3
 API_ENDPOINT = f"https://api.coingecko.com/api/v{API_VERSION}/coins/bitcoin"
