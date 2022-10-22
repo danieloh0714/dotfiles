@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# for tracking dotfiles
-alias d="git --git-dir=$HOME/docs/projects/dotfiles --work-tree=$HOME"
-
 # git
 alias gaa="git add .; git status"
 alias gs="git status"
