@@ -18,6 +18,10 @@ super + d
 super + shift + d
   rofi -show run
 
+# passmenu
+super + p
+  passmenu
+
 # browser
 super + w
   $BROWSER
