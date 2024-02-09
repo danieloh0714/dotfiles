@@ -1,5 +1,4 @@
 configuration {
     modi: "drun,run";
 }
-
-@import "~/.cache/wal/colors-rofi-light"
+@theme "~/.local/share/rofi/themes/nord.rasi"
