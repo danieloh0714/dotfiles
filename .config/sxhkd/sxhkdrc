@@ -40,20 +40,31 @@ super + r
 super + c
   signal-desktop
 
-# audio control
+# media control
 XF86AudioRaiseVolume
+  pactl set-sink-volume 0 +5%
+F12
   pactl set-sink-volume 0 +5%
 XF86AudioLowerVolume
   pactl set-sink-volume 0 -5%
+F11
+  pactl set-sink-volume 0 -5%
 XF86AudioMute
   pactl set-sink-mute 0 toggle
+F10
+  pactl set-sink-mute 0 toggle
+
 XF86AudioPlay
   mpc toggle
-XF86AudioStop
-  mpc stop
+F8
+  mpc toggle
 XF86AudioPrev
   mpc prev
+F7
+  mpc prev
 XF86AudioNext
+  mpc next
+F9
   mpc next
 
 # screenshot
