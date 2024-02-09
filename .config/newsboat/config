@@ -1,15 +1,8 @@
 browser $BROWSER
-reload-threads 10
+reload-threads 20
 text-width 80
 goto-next-feed no
-max-items 50
-
-unbind-key j
-unbind-key k
-unbind-key J
-unbind-key K
-unbind-key g
-unbind-key G
+max-items 300
 
 bind-key j down
 bind-key k up
@@ -23,3 +16,6 @@ color listfocus black yellow standout bold
 color listfocus_unread yellow default bold
 color info red black bold
 color article white default bold
+
+highlight feedlist "---.*---" white default bold
+highlight feedlist ".*0/0.." default default invis
