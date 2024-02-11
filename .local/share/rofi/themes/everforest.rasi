@@ -16,10 +16,10 @@ configuration {
   padding: 0;
   spacing: 0;
 
-  bg: #2E3440;
-  bg-alt: #3B4252;
-  fg: #81A1C1;
-  fg-alt: #EBCB8B;
+  bg: #2d353b;
+  bg-alt: #475258;
+  fg: #d3c6aa;
+  fg-alt: #dbbc7f;
 
   background-color: @bg;
   text-color: @fg;
