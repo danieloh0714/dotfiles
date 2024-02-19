@@ -11,7 +11,7 @@ elif [ "$NUM_DISPLAYS" == 2 ]; then
   bspc monitor DP-3 -d 1 2
 fi
 
-bspc config border_width 0
+bspc config border_width 1
 bspc config window_gap 15
 bspc config ignore_ewmh_fullscreen all
 
