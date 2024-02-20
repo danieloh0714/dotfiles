@@ -1,9 +1,8 @@
 #!/bin/sh
 
 OPTION=$(printf "full\nscreen\nselect" | dmenu -i -p "")
-NOTIFICATION_ICON="/usr/share/icons/Adwaita/16x16/legacy/applets-screenshooter-symbolic.symbolic.png"
 case "$OPTION" in
-  full) flameshot full && notify-send -u low "screenshot taken" "all displays" -i "$NOTIFICATION_ICON";;
-  screen) flameshot screen -n 1 && notify-send -u low "screenshot taken" "current display" -i "$NOTIFICATION_ICON";;
+  full) flameshot full;;
+  screen) flameshot screen -n 0;;
   select) flameshot gui;;
 esac
