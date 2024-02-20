@@ -1,23 +1,23 @@
 import = [".config/alacritty/colors.toml"]
 
 [font]
-size = 14.0
+size = 15.0
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "Writer"
 style = "Bold"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "Writer"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "Writer"
 style = "Regular"
 
 [window]
 opacity = 0.8
 
 [window.padding]
-x = 10
-y = 10
+x = 25
+y = 25
