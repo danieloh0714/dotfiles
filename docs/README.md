@@ -7,7 +7,7 @@
 - Hotkeys: [sxhkd](https://github.com/danieloh0714/dotfiles/blob/main/.config/sxhkd/sxhkdrc)
 - Notifications: [dunst](https://github.com/danieloh0714/dotfiles/blob/main/.config/dunst/dunstrc)
 - Compositor: [picom](https://github.com/danieloh0714/dotfiles/blob/main/.config/picom/picom.conf)
-- Terminal: [Alacritty](https://github.com/danieloh0714/dotfiles/blob/main/.config/alacritty/alacritty.toml)
+- Terminal: [Alacritty](https://github.com/danieloh0714/dotfiles/blob/main/.config/alacritty)
 - Editor: [Neovim](https://github.com/danieloh0714/nvim)
 - Status bar: [Polybar](https://github.com/danieloh0714/dotfiles/tree/main/.config/polybar)
 - Music: [MPD](https://github.com/danieloh0714/dotfiles/blob/main/.config/mpd/mpd.conf) w/ [ncmpcpp](https://github.com/danieloh0714/dotfiles/tree/main/.config/ncmpcpp)
