@@ -20,7 +20,7 @@ super + shift + d
 
 # passmenu
 super + p
-  passmenu
+  passmenu --type
 
 # browser
 super + w
