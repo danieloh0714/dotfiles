@@ -2,9 +2,7 @@
 
 WAL_DIR="$XDG_CACHE_HOME/wal"
 
-# seperate into two commands in order to use --no-fehbg flag
 wal -nqi "$XDG_DATA_HOME/wallpapers/$1"
-feh --bg-fill --no-fehbg "$(< "$WAL_DIR/wal")"
 
 # load colors
 COLORS="$WAL_DIR/colors.sh"
