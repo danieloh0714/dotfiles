@@ -1,0 +1,14 @@
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": [],
+    "modules-right": ["wireplumber", "battery", "clock"],
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": "{:%a, %d. %b  %H:%M}"
+    }
+}
