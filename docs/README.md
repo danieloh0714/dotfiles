@@ -7,6 +7,6 @@
 - Compositor: [Hyprland](https://github.com/danieloh0714/dotfiles/blob/main/.config/hypr)
 - Terminal: [Alacritty](https://github.com/danieloh0714/dotfiles/blob/main/.config/alacritty)
 - Bar: [Waybar](https://github.com/danieloh0714/dotfiles/tree/main/.config/waybar)
-- Notifications: [dunst](https://github.com/danieloh0714/dotfiles/blob/main/.config/dunst/dunstrc)
+- Notifications: [mako](https://github.com/danieloh0714/dotfiles/blob/main/.config/mako/config)
 - RSS: [Newsboat](https://github.com/danieloh0714/dotfiles/blob/main/.config/newsboat/config)
 - Music: [MPD](https://github.com/danieloh0714/dotfiles/blob/main/.config/mpd/mpd.conf) w/ [ncmpcpp](https://github.com/danieloh0714/dotfiles/tree/main/.config/ncmpcpp)
