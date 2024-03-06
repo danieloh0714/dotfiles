@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 BOOKMARKS_FILE="$XDG_DATA_HOME/bookmarks"
 OPTIONS=$(awk '{sub($1 FS,"")}7' "$BOOKMARKS_FILE")
