@@ -3,6 +3,7 @@
 WAL_DIR="$XDG_CACHE_HOME/wal"
 
 wal -nqi "$XDG_DATA_HOME/wallpapers/$1"
+swaybg -i $(shuf -n1 -e "$XDG_DATA_HOME/wallpapers/*") -m fill &
 
 # load colors
 COLORS="$WAL_DIR/colors.sh"
