@@ -1,7 +1,6 @@
-@import "./rose-pine-moon.css";
-
 * {
   /* reference the color by using @color-name */
-  background: @base;
-  /* border: 1px solid @overlay; */
+  background: #232136;
+  font-size: 16px;
 }
+
