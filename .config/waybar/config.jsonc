@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "output": "eDP-1",
+    "output": "DP-3",
     "position": "top",
     "height": 45,
     "modules-left": [
