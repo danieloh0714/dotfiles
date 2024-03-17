@@ -1,6 +1,31 @@
+@import url("../../.cache/wal/colors-waybar.css");
+
 * {
-  /* reference the color by using @color-name */
-  background: #232136;
-  font-size: 16px;
+    font-family: Writer, sans-serif;
+    font-size: 16px;
 }
 
+window#waybar {
+    background: #232136;
+    color: #e0def4;
+}
+
+#battery {
+    padding: 0 17px 0 11px;
+}
+
+#network {
+    padding: 0 25px 0 10px;
+}
+
+#wireplumber {
+    padding: 1px 0 0 0;
+}
+
+#workspaces button {
+    padding: 0 0 0 20px;
+}
+
+#custom-rss {
+    padding: 2px 20px 0px 0px;
+}
