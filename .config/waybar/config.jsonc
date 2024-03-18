@@ -2,7 +2,7 @@
     "layer": "top",
     "output": "DP-3",
     "position": "top",
-    "height": 45,
+    "height": 40,
     "modules-left": [
         "hyprland/workspaces"
     ],
@@ -52,6 +52,7 @@
     "custom/rss": {
         "exec": "./.config/waybar/scripts/rss",
         "format": "<span color='#ea9a97'>󰑬</span> {}",
+        "internal": 3600,
         "tooltip": false
     }
 }

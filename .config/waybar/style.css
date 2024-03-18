@@ -1,8 +1,6 @@
-@import url("../../.cache/wal/colors-waybar.css");
-
 * {
     font-family: Writer, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 window#waybar {
@@ -22,8 +20,12 @@ window#waybar {
     padding: 1px 0 0 0;
 }
 
-#workspaces button {
-    padding: 0 0 0 20px;
+#workspaces {
+    padding: 0 0 0 15px;
+}
+
+#workspaces button.active {
+    color: #9ccfd8;
 }
 
 #custom-rss {
