@@ -1,9 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
 BOOKMARKS_FILE="$XDG_DATA_HOME/bookmarks"
+
 OPTIONS=$(awk '{sub($1 FS,"")}7' "$BOOKMARKS_FILE")
-OPTION_IDX=$(echo "$OPTIONS" | dmenu-wl --index)
-OPTION_IDX_ADJ=$(("$OPTION_IDX"+1)) # awk line numbers are 1-based
+OPTIONS_NUMBERED=$(echo "$OPTIONS" | nl -w2 -s '. ')
+
+OPTION_IDX=$(echo "$OPTIONS_NUMBERED" | dmenu-wl --index)
+OPTION_IDX_ADJ=$(($OPTION_IDX+1)) # add one since awk line numbers are 1-based
+
 URL=$(awk -v i="$OPTION_IDX_ADJ" 'FNR==i {print $1}' "$BOOKMARKS_FILE")
 
 wl-copy "$URL"
