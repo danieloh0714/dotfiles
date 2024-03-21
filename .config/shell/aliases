@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # git
-alias gaa="git add .; git status"
+alias gaa="git add . && git status"
+alias gb="git branch -v"
 alias gs="git status"
 
 # color
