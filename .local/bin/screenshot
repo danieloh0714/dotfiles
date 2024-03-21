@@ -1,18 +1,18 @@
 #!/bin/sh
 
 screenshot_full() {
-    sleep 0.25
+    sleep 0.5
     grim
 }
 
 screenshot_screen() {
     OUTPUT=$(printf "eDP-1\nDP-3" | dmenu-wl -p "󰍹  ")
-    sleep 0.25
+    sleep 0.5
     grim -o "$OUTPUT"
 }
 
 screenshot_region() {
-    sleep 0.25
+    sleep 0.5
     grim -g "$(slurp)" - | wl-copy -t image/png
 }
 
