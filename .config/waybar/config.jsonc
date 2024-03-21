@@ -52,7 +52,7 @@
     "custom/rss": {
         "exec": "./.config/waybar/scripts/rss",
         "format": "<span color='#ea9a97'>󰑬</span> {}",
-        "internal": 3600,
+        "interval": 3600,
         "tooltip": false
     }
 }
