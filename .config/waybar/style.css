@@ -9,7 +9,7 @@ window#waybar {
 }
 
 #battery {
-    padding: 0 17px 0 11px;
+    padding: 0 10px 0 11px;
 }
 
 #network {

@@ -18,11 +18,11 @@
     "battery": {
         "format": "{icon}",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "󰁻",
+            "󰁽",
+            "󰁿",
+            "󰂁",
+            "󰁹"
         ]
     },
     "clock": {
@@ -34,8 +34,8 @@
     },
     "network": {
         "interface": "wlp59s0",
-        "format-wifi": "󰖩",
-        "format-disconnected": "󰖪",
+        "format-wifi": "󰤨",
+        "format-disconnected": "󰤭",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)"
     },
     "wireplumber": {
