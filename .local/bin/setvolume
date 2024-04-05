@@ -1,0 +1,35 @@
+#!/bin/sh
+
+notify_volume() {
+    VOLUME="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{ print $2 * 100 }')"
+    notify-send -c volume -h string:x-canonical-private-synchronous:volume -h int:value:"$VOLUME" -i "$XDG_CONFIG_HOME"/mako/icons/volume-high.png -u low "Volume: $VOLUME%"
+}
+
+notify_mute() {
+    notify-send -c volume -h string:x-canonical-private-synchronous:volume -h int:value:0 -i "$XDG_CONFIG_HOME"/mako/icons/volume-mute.png -u low "Volume: muted"
+}
+
+notify() {
+    (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep MUTED && notify_mute) || notify_volume
+}
+
+dec_volume() {
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+    notify
+}
+
+inc_volume() {
+    wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+    notify
+}
+
+toggle() {
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+    notify
+}
+
+case "$1" in
+  dec) dec_volume;;
+  inc) inc_volume;;
+  toggle) toggle;;
+esac
