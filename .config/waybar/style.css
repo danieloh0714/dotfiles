@@ -1,33 +1,42 @@
 * {
-    font-family: Writer, sans-serif;
+    font-family: JetBrainsMono Nerd Font Mono, sans-serif;
     font-size: 18px;
 }
 
 window#waybar {
-    background: #232136;
+    background-color: #191724;
+    opacity: 0.8;
     color: #e0def4;
 }
 
 #battery {
-    padding: 0 10px 0 11px;
+    padding: 0 10px 0 6px;
+    font-size: 24px;
+}
+
+#clock {
+    color: #9ccfd8;
+}
+
+#clock.clock {
+    color: #9ccfd8;
+    padding: 0 20px 0 0;
 }
 
 #network {
     padding: 0 25px 0 10px;
-}
-
-#wireplumber {
-    padding: 1px 0 0 0;
+    font-size: 24px;
 }
 
 #workspaces {
-    padding: 0 0 0 15px;
+    padding: 0 0 0 10px;
 }
 
 #workspaces button.active {
-    color: #9ccfd8;
+    color: #f6c177;
 }
 
 #custom-rss {
+    color: #ea9a97;
     padding: 2px 20px 0px 0px;
 }

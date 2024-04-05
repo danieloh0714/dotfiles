@@ -7,30 +7,32 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "clock"
+        "clock#clock",
+        "clock#date"
     ],
     "modules-right": [
         "custom/rss",
-        "wireplumber",
         "battery",
         "network"
     ],
     "battery": {
         "format": "{icon}",
         "format-icons": [
-            "󰁻",
-            "󰁽",
-            "󰁿",
-            "󰂁",
-            "󰁹"
+            "",
+            "",
+            "",
+            "",
+            ""
         ]
     },
-    "clock": {
-        "format": "<span color='#9ccfd8'></span>  {:%H:%M}",
-        "tooltip-format": "{:%a, %b %d}"
+    "clock#clock": {
+        "format": " {:%R}"
+    },
+    "clock#date": {
+        "format": " {:%b %d}"
     },
     "hyprland/workspaces": {
-        "all-outputs": false
+        "all-outputs": true
     },
     "network": {
         "interface": "wlp59s0",
@@ -38,20 +40,9 @@
         "format-disconnected": "󰤭",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)"
     },
-    "wireplumber": {
-        "format": "{icon} ",
-        "format-muted": "󰝟 ",
-        "format-icons": [
-            "",
-            "",
-            ""
-        ],
-        "scroll-step": 5.0,
-        "tooltip-format": "{volume}%"
-    },
     "custom/rss": {
         "exec": "./.config/waybar/scripts/rss",
-        "format": "<span color='#ea9a97'>󰑬</span> {}",
+        "format": "󰑬 {}",
         "interval": 3600,
         "tooltip": false
     }
