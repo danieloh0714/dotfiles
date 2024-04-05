@@ -1,36 +1,4 @@
 #!/bin/sh
 
-WAL_DIR="$XDG_CACHE_HOME/wal"
-
-wal -nqi "$XDG_DATA_HOME/wallpapers/$1"
-swaybg -i $(shuf -n1 -e "$XDG_DATA_HOME/wallpapers/*") -m fill &
-
-# load colors
-COLORS="$WAL_DIR/colors.sh"
-[ -f "$COLORS" ] || exit
-. "$COLORS"
-
-# set alacritty colors
-ALACRITTY="$WAL_DIR/colors-alacritty.toml"
-printf "[colors.primary]\n" > "$ALACRITTY"
-printf "background = '$background'\n" >> "$ALACRITTY"
-printf "foreground = '$foreground'\n\n" >> "$ALACRITTY"
-
-printf "[colors.normal]\n" >> "$ALACRITTY"
-printf "black = '$color0'\n" >> "$ALACRITTY"
-printf "red = '$color1'\n" >> "$ALACRITTY"
-printf "green = '$color2'\n" >> "$ALACRITTY"
-printf "yellow = '$color3'\n" >> "$ALACRITTY"
-printf "blue = '$color4'\n" >> "$ALACRITTY"
-printf "magenta = '$color5'\n" >> "$ALACRITTY"
-printf "cyan = '$color6'\n" >> "$ALACRITTY"
-printf "white = '$color7'\n\n" >> "$ALACRITTY"
-printf "[colors.bright]\n" >> "$ALACRITTY"
-printf "black = '$color8'\n" >> "$ALACRITTY"
-printf "red = '$color9'\n" >> "$ALACRITTY"
-printf "green = '$color10'\n" >> "$ALACRITTY"
-printf "yellow = '$color11'\n" >> "$ALACRITTY"
-printf "blue = '$color12'\n" >> "$ALACRITTY"
-printf "magenta = '$color13'\n" >> "$ALACRITTY"
-printf "cyan = '$color14'\n" >> "$ALACRITTY"
-printf "white = '$color15'" >> "$ALACRITTY"
+IMG=$(shuf -n1 -e "$XDG_DATA_HOME"/wallpapers/*)
+swaybg -i "$IMG" -m fill &
