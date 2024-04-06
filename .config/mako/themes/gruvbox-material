@@ -3,7 +3,7 @@ font="JetBrainsMono Nerd Font", 12
 history=0
 max-icon-size=48
 text-color=#d4be98
-progress-color=source #373e4d
+progress-color=source #45403d
 
 [urgency=low]
 border-color=#d4be98
