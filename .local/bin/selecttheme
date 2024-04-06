@@ -2,7 +2,7 @@
 
 set_alacritty_config() {
     CONFIG="$XDG_CONFIG_HOME"/alacritty
-    sed -i '/import/c\import = ["'$CONFIG'/'$1'.toml"]' "$CONFIG"/alacritty.toml
+    sed -i '/import/c\import = ["'"$CONFIG"'/'"$1"'.toml"]' "$CONFIG"/alacritty.toml
 }
 
 set_nvim_config() {
@@ -10,7 +10,7 @@ set_nvim_config() {
 }
 
 set_waybar_config() {
-    sed -i '/import/c\@import "./'$1'.css";' "$XDG_CONFIG_HOME"/waybar/style.css
+    sed -i '/import/c\@import "./'"$1"'.css";' "$XDG_CONFIG_HOME"/waybar/style.css
     restartwaybar
 }
 
@@ -22,13 +22,13 @@ set_fuzzel_config() {
 set_mako_config() {
     CONFIG="$XDG_CONFIG_HOME"/mako
     cat "$CONFIG"/themes/"$1" > "$CONFIG"/config
-    sed -i '/VOLUME_ICON=/c\VOLUME_ICON="$ICONS"/volume-'$2'.png' ~/.local/bin/setvolume
-    sed -i '/MUTE_ICON=/c\MUTE_ICON="$ICONS"/mute-'$2'.png' ~/.local/bin/setvolume
+    sed -i "/VOLUME_ICON=/c\VOLUME_ICON=\"\$ICONS\"/volume-$2.png" ~/.local/bin/setvolume
+    sed -i "/MUTE_ICON=/c\MUTE_ICON=\"\$ICONS\"/mute-$2.png" ~/.local/bin/setvolume
     makoctl reload
 }
 
 set_signal_config() {
-    sed -i '/theme-setting/c\  "theme-setting": "'$1'",' "$XDG_CONFIG_HOME"/Signal/ephemeral.json
+    sed -i '/theme-setting/c\  "theme-setting": "'"$1"'",' "$XDG_CONFIG_HOME"/Signal/ephemeral.json
 }
 
 set_theme() {
@@ -54,12 +54,12 @@ select_theme() {
       "nord") set_theme nord dark;;
       "rose-pine") set_theme rose-pine dark;;
       "rose-pine-dawn") set_theme rose-pine-dawn light;;
-      "random") set_theme "$(printf "$THEMES" | shuf -n 1)" dark;;
+      "random") set_theme "$(printf "%s" "$THEMES" | shuf -n 1)" dark;;
       *) printf "Error: Invalid theme.\n"; exit 1;;
     esac
 }
 
 [ -n "$1" ] && select_theme "$1" && exit
 
-OPTION=$(printf "$THEMES" | dmenu-wl -p "  ")
+OPTION=$(printf "%s" "$THEMES" | dmenu-wl -p "  ")
 select_theme "$OPTION"
