@@ -2,7 +2,7 @@
 
 set_alacritty_config() {
     CONFIG="$XDG_CONFIG_HOME"/alacritty
-    sed -i '/import/c\import = ["'"$CONFIG"'/'"$1"'.toml"]' "$CONFIG"/alacritty.toml
+    sed -i '/import/c\import = ["'"$CONFIG"'/themes/'"$1"'.toml"]' "$CONFIG"/alacritty.toml
 }
 
 set_nvim_config() {
@@ -10,7 +10,7 @@ set_nvim_config() {
 }
 
 set_waybar_config() {
-    sed -i '/import/c\@import "./'"$1"'.css";' "$XDG_CONFIG_HOME"/waybar/style.css
+    sed -i '/import/c\@import "./themes/'"$1"'.css";' "$XDG_CONFIG_HOME"/waybar/style.css
     restartwaybar
 }
 
