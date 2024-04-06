@@ -5,7 +5,7 @@
 
 - OS: Arch Linux
 - Shell: [Zsh](../.config/zsh)
-- Editor: [Neovim](../.config/nvim)
+- Editor: [Neovim](https://github.com/danieloh0714/nvim)
 - Compositor: [Hyprland](../.config/hypr/hyprland.conf)
 - Terminal: [Alacritty](../.config/alacritty)
 - Bar: [Waybar](../.config/waybar)
