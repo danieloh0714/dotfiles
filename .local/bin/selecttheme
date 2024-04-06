@@ -1,9 +1,8 @@
 #!/bin/sh
 
-ALACRITTY_CONFIG="$XDG_CONFIG_HOME"/alacritty
-
 set_alacritty_config() {
-    sed -i '/import/c\import = ["'$ALACRITTY_CONFIG'/'$1'.toml"]' "$ALACRITTY_CONFIG"/alacritty.toml
+    CONFIG="$XDG_CONFIG_HOME"/alacritty
+    sed -i '/import/c\import = ["'$CONFIG'/'$1'.toml"]' "$CONFIG"/alacritty.toml
 }
 
 set_nvim_config() {
@@ -16,11 +15,13 @@ set_waybar_config() {
 }
 
 set_fuzzel_config() {
-    cat "$XDG_CONFIG_HOME"/fuzzel/themes/"$1".ini > "$XDG_CONFIG_HOME"/fuzzel/fuzzel.ini
+    CONFIG="$XDG_CONFIG_HOME"/fuzzel
+    cat "$CONFIG"/themes/"$1".ini > "$CONFIG"/fuzzel.ini
 }
 
 set_mako_config() {
-    cat "$XDG_CONFIG_HOME"/mako/themes/"$1" > "$XDG_CONFIG_HOME"/mako/config
+    CONFIG="$XDG_CONFIG_HOME"/mako
+    cat "$CONFIG"/themes/"$1" > "$CONFIG"/config
     sed -i '/VOLUME_ICON=/c\VOLUME_ICON="$ICONS"/volume-'$2'.png' ~/.local/bin/setvolume
     sed -i '/MUTE_ICON=/c\MUTE_ICON="$ICONS"/mute-'$2'.png' ~/.local/bin/setvolume
     makoctl reload
