@@ -31,13 +31,21 @@ set_signal_config() {
     sed -i '/theme-setting/c\  "theme-setting": "'"$1"'",' "$XDG_CONFIG_HOME"/Signal/ephemeral.json
 }
 
-set_theme() {
+set_configs() {
     set_alacritty_config "$1"
     set_nvim_config "$1"
     set_waybar_config "$1"
     set_fuzzel_config "$1"
     set_mako_config "$1" "$2"
     set_signal_config "$2"
+}
+
+set_theme() {
+    case "$1" in
+        everforest|gruvbox-material|nord|rose-pine) set_configs "$1" dark;;
+        rose-pine-dawn) set_configs "$1" light;;
+        *) printf "Error: Invalid theme.\n"; exit 1;;
+    esac
     setwal "$1"
 }
 
@@ -47,19 +55,14 @@ nord
 rose-pine
 rose-pine-dawn"
 
-select_theme() {
+main() {
     case "$1" in
-      "everforest") set_theme everforest dark;;
-      "gruvbox-material") set_theme gruvbox-material dark;;
-      "nord") set_theme nord dark;;
-      "rose-pine") set_theme rose-pine dark;;
-      "rose-pine-dawn") set_theme rose-pine-dawn light;;
-      "random") set_theme "$(printf "%s" "$THEMES" | shuf -n 1)" dark;;
-      *) printf "Error: Invalid theme.\n"; exit 1;;
+        random) set_theme "$(printf "%s" "$THEMES" | shuf -n 1)";;
+        *) set_theme "$1";;
     esac
 }
 
-[ -n "$1" ] && select_theme "$1" && exit
+[ -n "$1" ] && main "$1" && exit
 
 OPTION=$(printf "%s" "$THEMES" | dmenu-wl -p "  ")
-select_theme "$OPTION"
+main "$OPTION"
