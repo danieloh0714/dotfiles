@@ -1,12 +1,16 @@
 #!/bin/sh
 
+ICONS="$XDG_CONFIG_HOME"/mako/icons
+VOLUME_ICON="$ICONS"/volume-dark.png
+MUTE_ICON="$ICONS"/mute-dark.png
+
 notify_volume() {
     VOLUME="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{ print $2 * 100 }')"
-    notify-send -c volume -h string:x-canonical-private-synchronous:volume -h int:value:"$VOLUME" -i "$XDG_CONFIG_HOME"/mako/icons/volume-high.png -u low "Volume: $VOLUME%"
+    notify-send -c volume -h string:x-canonical-private-synchronous:volume -h int:value:"$VOLUME" -i "$VOLUME_ICON" -u low "Volume: $VOLUME%"
 }
 
 notify_mute() {
-    notify-send -c volume -h string:x-canonical-private-synchronous:volume -h int:value:0 -i "$XDG_CONFIG_HOME"/mako/icons/volume-mute.png -u low "Volume: muted"
+    notify-send -c volume -h string:x-canonical-private-synchronous:volume -h int:value:0 -i "$MUTE_ICON" -u low "Volume: muted"
 }
 
 notify() {
