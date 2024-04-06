@@ -39,8 +39,9 @@ set_configs() {
     set_signal_config "$2"
 }
 
-OPTION=$(printf "Nord\nRosé Pine\nRosé Pine Dawn" | dmenu-wl -p "  ")
+OPTION=$(printf "Gruvbox Material\nNord\nRosé Pine\nRosé Pine Dawn" | dmenu-wl -p "  ")
 case "$OPTION" in
+  "Gruvbox Material") set_configs gruvbox-material dark;;
   "Nord") set_configs nord dark;;
   "Rosé Pine") set_configs rose-pine dark;;
   "Rosé Pine Dawn") set_configs rose-pine-dawn light;;
