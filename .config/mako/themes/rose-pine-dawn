@@ -1,20 +1,20 @@
-background-color=#2e3440
+background-color=#faf4ed
 font="JetBrainsMono Nerd Font", 12
 history=0
 max-icon-size=48
-text-color=#d8dee9
-progress-color=source #373e4d
+text-color=#575279
+progress-color=source #9893a5
 
 [urgency=low]
-border-color=#d8dee9
+border-color=#575279
 default-timeout=2000
 
 [urgency=normal]
-border-color=#81a1c1
+border-color=#56949f
 default-timeout=5000
 
 [urgency=critical]
-border-color=#bf616a
+border-color=#b4637a
 
 [category=volume]
 anchor=center

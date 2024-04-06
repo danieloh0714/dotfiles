@@ -19,6 +19,13 @@ set_fuzzel_config() {
     cat "$XDG_CONFIG_HOME"/fuzzel/themes/"$1".ini > "$XDG_CONFIG_HOME"/fuzzel/fuzzel.ini
 }
 
+set_mako_config() {
+    cat "$XDG_CONFIG_HOME"/mako/themes/"$1" > "$XDG_CONFIG_HOME"/mako/config
+    sed -i '/VOLUME_ICON=/c\VOLUME_ICON="$ICONS"/volume-'$2'.png' ~/.local/bin/setvolume
+    sed -i '/MUTE_ICON=/c\MUTE_ICON="$ICONS"/mute-'$2'.png' ~/.local/bin/setvolume
+    makoctl reload
+}
+
 set_signal_config() {
     sed -i '/theme-setting/c\  "theme-setting": "'$1'",' "$XDG_CONFIG_HOME"/Signal/ephemeral.json
 }
@@ -28,6 +35,7 @@ set_configs() {
     set_nvim_config "$1"
     set_waybar_config "$1"
     set_fuzzel_config "$1"
+    set_mako_config "$1" "$2"
     set_signal_config "$2"
 }
 
