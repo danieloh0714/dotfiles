@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/colors.toml"]
+import = ["/home/doh/.config/alacritty/rose-pine.toml"]
 
 [font]
 size = 14.0

@@ -1,0 +1,39 @@
+#!/bin/sh
+
+ALACRITTY_CONFIG="$XDG_CONFIG_HOME"/alacritty
+
+set_alacritty_config() {
+    sed -i '/import/c\import = ["'$ALACRITTY_CONFIG'/'$1'.toml"]' "$ALACRITTY_CONFIG"/alacritty.toml
+}
+
+set_nvim_config() {
+    printf "require('colorschemes.%s')" "$1" > "$XDG_CONFIG_HOME"/nvim/lua/colorscheme.lua
+}
+
+set_waybar_config() {
+    sed -i '/import/c\@import "./'$1'.css";' "$XDG_CONFIG_HOME"/waybar/style.css
+    restartwaybar
+}
+
+set_fuzzel_config() {
+    cat "$XDG_CONFIG_HOME"/fuzzel/themes/"$1".ini > "$XDG_CONFIG_HOME"/fuzzel/fuzzel.ini
+}
+
+set_signal_config() {
+    sed -i '/theme-setting/c\  "theme-setting": "'$1'",' "$XDG_CONFIG_HOME"/Signal/ephemeral.json
+}
+
+set_configs() {
+    set_alacritty_config "$1"
+    set_nvim_config "$1"
+    set_waybar_config "$1"
+    set_fuzzel_config "$1"
+    set_signal_config "$2"
+}
+
+OPTION=$(printf "Nord\nRosé Pine\nRosé Pine Dawn" | dmenu-wl -p "  ")
+case "$OPTION" in
+  "Nord") set_configs nord dark;;
+  "Rosé Pine") set_configs rose-pine dark;;
+  "Rosé Pine Dawn") set_configs rose-pine-dawn light;;
+esac

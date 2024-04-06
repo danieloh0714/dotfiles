@@ -1,12 +1,13 @@
+@import "./rose-pine.css";
+
 * {
     font-family: JetBrainsMono Nerd Font Mono, sans-serif;
     font-size: 18px;
 }
 
 window#waybar {
-    background-color: #191724;
-    opacity: 0.8;
-    color: #e0def4;
+    background-color: @bg;
+    color: @fg;
 }
 
 #battery {
@@ -15,11 +16,11 @@ window#waybar {
 }
 
 #clock {
-    color: #9ccfd8;
+    color: @blue;
 }
 
 #clock.clock {
-    color: #9ccfd8;
+    color: @blue;
     padding: 0 20px 0 0;
 }
 
@@ -32,8 +33,12 @@ window#waybar {
     padding: 0 0 0 10px;
 }
 
+#workspaces button {
+    color: @fg;
+}
+
 #workspaces button.active {
-    color: #f6c177;
+    color: @yellow;
 }
 
 #custom-rss {
