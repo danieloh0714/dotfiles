@@ -1,4 +1,5 @@
 #!/bin/sh
 
-IMG=$(shuf -n1 -e "$XDG_DATA_HOME"/wallpapers/*)
+IMG=$(find "$XDG_DATA_HOME"/wallpapers | grep "$1")
+killall swaybg
 swaybg -i "$IMG" -m fill &
