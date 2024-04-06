@@ -19,4 +19,5 @@ alias mv="mv -iv"
 alias rm="rm -iv"
 
 # programs
+alias ffmpeg="ffmpeg -hide_banner"
 alias v="nvim"
