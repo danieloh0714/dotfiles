@@ -16,7 +16,8 @@ set_waybar_config() {
 
 set_fuzzel_config() {
     CONFIG="$XDG_CONFIG_HOME"/fuzzel
-    cat "$CONFIG"/themes/"$1".ini > "$CONFIG"/fuzzel.ini
+    sed -i '/\[colors\]/,$d' "$CONFIG"/fuzzel.ini
+    cat "$CONFIG"/themes/"$1".ini >> "$CONFIG"/fuzzel.ini
 }
 
 set_mako_config() {
@@ -64,5 +65,5 @@ main() {
 
 [ -n "$1" ] && main "$1" && exit
 
-OPTION=$(printf "%s" "$THEMES" | dmenu-wl -p "  ")
+OPTION=$(printf "%s\nrandom" "$THEMES" | dmenu-wl -p "  ")
 main "$OPTION"
