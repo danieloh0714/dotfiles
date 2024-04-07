@@ -1,4 +1,4 @@
-@import "./themes/rose-pine.css";
+@import "./themes/nord.css";
 
 * {
     font-family: JetBrainsMono Nerd Font Mono, sans-serif;
@@ -20,7 +20,6 @@ window#waybar {
 }
 
 #clock.clock {
-    color: @blue;
     padding: 0 20px 0 0;
 }
 
@@ -30,10 +29,12 @@ window#waybar {
 }
 
 #workspaces {
-    padding: 0 0 0 10px;
+    padding-left: 10px;
 }
 
 #workspaces button {
+    background: @bg;
+    border: none;
     color: @fg;
 }
 
@@ -43,5 +44,6 @@ window#waybar {
 
 #custom-rss {
     color: #ea9a97;
-    padding: 2px 20px 0px 0px;
+    padding-top: 2px;
+    padding-right: 20px;
 }

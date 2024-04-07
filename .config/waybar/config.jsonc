@@ -26,10 +26,12 @@
         ]
     },
     "clock#clock": {
-        "format": " {:%R}"
+        "format": " {:%R}",
+        "tooltip": false
     },
     "clock#date": {
-        "format": " {:%b %d}"
+        "format": " {:%b %d}",
+        "tooltip": false
     },
     "hyprland/workspaces": {
         "all-outputs": true
