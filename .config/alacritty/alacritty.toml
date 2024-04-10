@@ -1,7 +1,5 @@
 import = ["/home/doh/.config/alacritty/themes/rose-pine.toml"]
 
-ipc_socket = false
-
 [font]
 size = 14.0
 
