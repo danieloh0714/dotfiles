@@ -1,22 +1,16 @@
 import = ["/home/doh/.config/alacritty/themes/rose-pine.toml"]
 
+ipc_socket = false
+
 [font]
 size = 14.0
 
-[font.bold]
-family = "Writer"
-style = "Bold"
-
-[font.italic]
-family = "Writer"
-style = "Italic"
-
 [font.normal]
-family = "Writer"
+family = "JetBrainsMono NFM"
 style = "Regular"
 
 [window]
-opacity = 1
+opacity = 1.0
 
 [window.padding]
 x = 30
