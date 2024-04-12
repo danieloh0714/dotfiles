@@ -16,15 +16,16 @@ set_waybar_config() {
 
 set_fuzzel_config() {
     CONFIG="$XDG_CONFIG_HOME"/fuzzel
-    sed -i '/\[colors\]/,$d' "$CONFIG"/fuzzel.ini
-    cat "$CONFIG"/themes/"$1".ini >> "$CONFIG"/fuzzel.ini
+    sed -i '/include/c\include="'"$CONFIG"'/themes/'"$1"'.ini"' "$CONFIG"/fuzzel.ini
 }
 
 set_mako_config() {
     CONFIG="$XDG_CONFIG_HOME"/mako
-    cat "$CONFIG"/themes/"$1" > "$CONFIG"/config
-    sed -i "/VOLUME_ICON=/c\VOLUME_ICON=\"\$ICONS\"/volume-$2.png" ~/.local/bin/setvolume
-    sed -i "/MUTE_ICON=/c\MUTE_ICON=\"\$ICONS\"/mute-$2.png" ~/.local/bin/setvolume
+    sed -i '/background-color/,$d' "$CONFIG"/config
+    {
+        cat "$CONFIG"/themes/"$1"
+        cat "$CONFIG"/categories
+    } >> "$CONFIG"/config
     makoctl reload
 }
 
