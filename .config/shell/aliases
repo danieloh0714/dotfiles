@@ -21,3 +21,4 @@ alias rm="rm -iv"
 # programs
 alias ffmpeg="ffmpeg -hide_banner"
 alias v="nvim"
+alias yt-audio="yt-dlp --extract-audio --audio-quality 0"
