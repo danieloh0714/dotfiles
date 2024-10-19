@@ -1,0 +1,5 @@
+configuration {
+    modi: "drun,run";
+}
+
+@theme "~/.local/share/rofi/themes/gruvbox-material.rasi"

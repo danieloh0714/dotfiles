@@ -1,24 +1,34 @@
 #!/bin/sh
 
-screenshot_full() {
-    sleep 0.5
-    grim
-}
+if [ -n "$WAYLAND_DISPLAY" ]
+then
+    screenshot_full() {
+        sleep 0.5
+        grim
+    }
 
-screenshot_screen() {
-    OUTPUT=$(printf "eDP-1\nDP-3" | dmenu-wl -p "󰍹  ")
-    sleep 0.5
-    grim -o "$OUTPUT"
-}
+    screenshot_screen() {
+        OUTPUT=$(printf "eDP-1\nDP-3" | dmenu-wl -p "󰍹  ")
+        sleep 0.5
+        grim -o "$OUTPUT"
+    }
 
-screenshot_region() {
-    sleep 0.5
-    grim -g "$(slurp)" - | wl-copy -t image/png
-}
+    screenshot_region() {
+        sleep 0.5
+        grim -g "$(slurp)" - | wl-copy -t image/png
+    }
 
-OPTION=$(printf "full\nscreen\nselect" | dmenu-wl -p "  ")
-case "$OPTION" in
-  full) screenshot_full;;
-  screen) screenshot_screen;;
-  select) screenshot_region;;
-esac
+    OPTION=$(printf "full\nscreen\nselect" | dmenu-wl -p "  ")
+    case "$OPTION" in
+      full) screenshot_full;;
+      screen) screenshot_screen;;
+      select) screenshot_region;;
+    esac
+else
+    OPTION=$(printf "full\nscreen\nselect" | dmenu -p "  ")
+    case "$OPTION" in
+      full) flameshot full;;
+      screen) flameshot screen -n 0;;
+      select) flameshot gui;;
+    esac
+fi

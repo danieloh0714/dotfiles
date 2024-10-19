@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# set displays
+setdisplays
+
+# faster key delay and rate
+xset r rate 210 40
+
+# start screenshot program
+flameshot &
+
+# start window manager
+exec bspwm
