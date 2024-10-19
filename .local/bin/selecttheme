@@ -24,7 +24,6 @@ set_mako_config() {
     sed -i '/background-color/,$d' "$CONFIG"/config
     {
         cat "$CONFIG"/themes/"$1"
-        cat "$CONFIG"/categories
     } >> "$CONFIG"/config
     makoctl reload
 }
