@@ -1,24 +1,23 @@
 background-color=#282828
-font="JetBrainsMono Nerd Font", 12
-history=0
-max-icon-size=48
+text-color=#d4be98
+
+[category=volume]
+anchor=center
+default-timeout=1000
+padding=20,30
+margin=0,0,0
+text-alignment=center
+background-color=#282828
 text-color=#d4be98
 progress-color=source #45403d
 
 [urgency=low]
 border-color=#d4be98
-default-timeout=2000
+default-timeout=5000
 
 [urgency=normal]
 border-color=#7daea3
-default-timeout=5000
+default-timeout=10000
 
 [urgency=critical]
 border-color=#ea6962
-
-[category=volume]
-anchor=center
-default-timeout=1000
-padding=20, 30
-margin=0,0,0
-text-alignment=center
