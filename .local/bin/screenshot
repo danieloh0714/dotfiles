@@ -20,15 +20,15 @@ then
 
     OPTION=$(printf "full\nscreen\nselect" | dmenu-wl -p "  ")
     case "$OPTION" in
-      full) screenshot_full;;
-      screen) screenshot_screen;;
-      select) screenshot_region;;
+        full) screenshot_full;;
+        screen) screenshot_screen;;
+        select) screenshot_region;;
     esac
 else
     OPTION=$(printf "full\nscreen\nselect" | dmenu -p "  ")
     case "$OPTION" in
-      full) flameshot full;;
-      screen) flameshot screen -n 0;;
-      select) flameshot gui;;
+        full) flameshot full;;
+        screen) flameshot screen -n 0;;
+        select) flameshot gui;;
     esac
 fi
