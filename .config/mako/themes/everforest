@@ -1,14 +1,5 @@
 background-color=#2d353b
 text-color=#d3c6aa
-
-[category=volume]
-anchor=center
-default-timeout=1000
-padding=20,30
-margin=0,0,0
-text-alignment=center
-background-color=#2d353b
-text-color=#d3c6aa
 progress-color=source #475258
 
 [urgency=low]
@@ -21,3 +12,11 @@ default-timeout=10000
 
 [urgency=critical]
 border-color=#e67e80
+
+[category=volume]
+anchor=center
+border-color=#d3c6aa
+default-timeout=1000
+padding=20,30
+margin=0,0,0
+text-alignment=center
