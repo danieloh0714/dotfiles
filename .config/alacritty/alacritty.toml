@@ -1,5 +1,5 @@
 [general]
-import = ["/home/doh/.config/alacritty/themes/rose-pine.toml"]
+import = ["themes/rose-pine.toml"]
 
 [font]
 size = 14.0
