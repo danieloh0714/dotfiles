@@ -10,4 +10,4 @@ visualizer_type = "ellipse"
 visualizer_look = "+|"
 
 browser_display_mode = columns
-startup_screen = browser
+startup_screen = media_library
