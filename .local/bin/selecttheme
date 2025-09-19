@@ -43,7 +43,7 @@ set_configs() {
 
 set_theme() {
     case "$1" in
-        everforest|gruvbox-material|nord|rose-pine) set_configs "$1" dark;;
+        everforest|gruvbox-material|night|nord|rose-pine) set_configs "$1" dark;;
         rose-pine-dawn) set_configs "$1" light;;
         *) printf "Error: Invalid theme.\n"; exit 1;;
     esac
@@ -52,6 +52,7 @@ set_theme() {
 
 THEMES="everforest
 gruvbox-material
+night
 nord
 rose-pine
 rose-pine-dawn"

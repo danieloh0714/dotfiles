@@ -1,0 +1,22 @@
+background-color=#1a1b26
+text-color=#c0caf5
+progress-color=source #414868
+
+[urgency=low]
+border-color=#a9b1d6
+default-timeout=5000
+
+[urgency=normal]
+border-color=#7aa2f7
+default-timeout=10000
+
+[urgency=critical]
+border-color=#f7768e
+
+[category=volume]
+anchor=center
+border-color=#a9b1d6
+default-timeout=1000
+padding=20,30
+margin=0,0,0
+text-alignment=center
