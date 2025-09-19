@@ -6,7 +6,6 @@ size = 14.0
 
 [font.normal]
 family = "JetBrainsMono NFM"
-style = "Regular"
 
 [window]
 opacity = 1.0
