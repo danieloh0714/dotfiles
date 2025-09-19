@@ -24,7 +24,8 @@
             "",
             "",
             ""
-        ]
+        ],
+        "tooltip-format": "Battery capacity: {capacity}%\n{timeTo}"
     },
     "bluetooth": {
         "format": " {num_connections}",
@@ -40,7 +41,11 @@
         "tooltip": false
     },
     "hyprland/workspaces": {
-        "all-outputs": true
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "7": "󰭹"
+        }
     },
     "network": {
         "interface": "wlp59s0",
