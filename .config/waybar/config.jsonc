@@ -11,7 +11,6 @@
         "clock#date"
     ],
     "modules-right": [
-        "bluetooth",
         "custom/rss",
         "battery",
         "network"
@@ -26,11 +25,6 @@
             ""
         ],
         "tooltip-format": "Battery capacity: {capacity}%\n{timeTo}"
-    },
-    "bluetooth": {
-        "format": " {num_connections}",
-        "tooltip-format-connected": "{device_enumerate}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%"
     },
     "clock#clock": {
         "format": " {:%R}",
