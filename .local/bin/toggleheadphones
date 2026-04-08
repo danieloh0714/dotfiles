@@ -1,0 +1,8 @@
+#!/bin/sh
+
+DEVICE="94:4B:F8:1A:A7:8D"
+if bluetoothctl info "$DEVICE" | grep -q "Connected: yes"; then
+    bluetoothctl disconnect "$DEVICE"
+else
+    bluetoothctl connect "$DEVICE"
+fi
